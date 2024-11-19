@@ -67,3 +67,52 @@ A feature-rich mobile e-commerce platform built with Angular and PrimeNG for a s
 - **Cart Management:** Add products to the cart, update quantities, or remove items.
 - **Checkout:** Complete the order process with a user-friendly form and validation.
 - **Mobile Optimized:** Experience a fully responsive UI across devices.
+
+Screenshots
+Home Page
+
+Product Details
+
+Cart
+
+Contributing
+Contributions are welcome! Please follow these steps:
+
+Fork the repository.
+Create a new branch:
+bash
+Copy code
+git checkout -b feature/your-feature-name
+Commit your changes:
+bash
+Copy code
+git commit -m "Add your message here"
+Push to the branch:
+bash
+Copy code
+git push origin feature/your-feature-name
+Open a pull request.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+Contact
+For questions or feedback:
+
+Your Name: yourname@example.com
+GitHub: @yourusername
+LinkedIn: Your LinkedIn
+markdown
+Copy code
+
+### **Additional Steps**
+1. Replace placeholder text like `yourname@example.com` or `screenshots/home.png` with your actual content.
+2. Add screenshots to a `screenshots` directory in your repository.
+3. Include a `LICENSE` file if licensing your project under MIT or another license.
+
+Let me know if you need help customizing further!
+
+
+
+
+
+
