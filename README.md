@@ -43,3 +43,8 @@ A feature-rich mobile e-commerce platform built with Angular and PrimeNG for a s
 1. Clone the repository:
    ```bash
    git clone https://github.com/username/mobile-ecommerce.git
+
+2. Navigate to the project directory:
+```bash
+cd mobile-ecommerce
+
