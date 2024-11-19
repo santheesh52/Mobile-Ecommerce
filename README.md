@@ -45,6 +45,19 @@ A feature-rich mobile e-commerce platform built with Angular and PrimeNG for a s
    git clone https://github.com/username/mobile-ecommerce.git
 
 2. Navigate to the project directory:
-```bash
-cd mobile-ecommerce
+   ```bash
+   cd mobile-ecommerce
 
+3. Install dependencies:
+   ```bash
+   npm install
+4. Start the mock API server (if using JSON Server):
+   ```bash
+   json-server --watch db.json
+
+5. Run the development server:
+   ```bash
+   ng serve
+6. Open the application in your browser:
+   ```bash
+   http://localhost:4200
