@@ -96,7 +96,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ##Contact
 For questions or feedback:
 
-- **Your Name: **yourname@example.com
+- **Your Name:**santheesh52@gmail.com
 - **GitHub:** @yourusername
 - **LinkedIn:** Your LinkedIn
 markdown
