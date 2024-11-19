@@ -62,8 +62,8 @@ A feature-rich mobile e-commerce platform built with Angular and PrimeNG for a s
    ```bash
    http://localhost:4200
 
-**Usage
+## Usage
 Product Browsing: View a list of products, filter by categories, and sort by price or popularity.
 Cart Management: Add products to the cart, update quantities, or remove items.
 Checkout: Complete the order process with a user-friendly form and validation.
-Mobile Optimized: Experience a fully responsive UI across devices.**
+Mobile Optimized: Experience a fully responsive UI across devices.
