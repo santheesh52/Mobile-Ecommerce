@@ -69,11 +69,15 @@ A feature-rich mobile e-commerce platform built with Angular and PrimeNG for a s
 - **Mobile Optimized:** Experience a fully responsive UI across devices.
 
 ##Screenshots
-Home Page
+**Home Page**
+![Screenshot 2024-11-19 153700](https://github.com/user-attachments/assets/c080a590-0dc5-4378-8a09-f18381874ab0)
 
-Product Details
+**Cart**
+![Screenshot 2024-11-19 153740](https://github.com/user-attachments/assets/6f77aac4-8678-4a0f-89b6-ac9de321744f)
 
-Cart
+**Payment **
+![Screenshot 2024-11-19 153807](https://github.com/user-attachments/assets/9b9f8de6-5b7a-46ae-a473-0c26797e12cd)
+
 
 ##Contributing
 Contributions are welcome! Please follow these steps:
@@ -103,7 +107,7 @@ markdown
 Copy code
 
 ### **Additional Steps**
-1. Replace placeholder text like `yourname@example.com` or `screenshots/home.png` with your actual content.
+1. Replace placeholder text like `santheesh52@gmail.com` or `screenshots/home.png` with your actual content.
 2. Add screenshots to a `screenshots` directory in your repository.
 3. Include a `LICENSE` file if licensing your project under MIT or another license.
 
