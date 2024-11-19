@@ -68,7 +68,7 @@ A feature-rich mobile e-commerce platform built with Angular and PrimeNG for a s
 - **Checkout:** Complete the order process with a user-friendly form and validation.
 - **Mobile Optimized:** Experience a fully responsive UI across devices.
 
-##Screenshots
+## Screenshots
 **Home Page**
 ![Screenshot 2024-11-19 153700](https://github.com/user-attachments/assets/c080a590-0dc5-4378-8a09-f18381874ab0)
 
