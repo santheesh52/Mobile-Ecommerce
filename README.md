@@ -16,6 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ##Screenshot
 <h2>1. Home Page</h2>
+
 ![Screenshot 2024-12-05 122023](https://github.com/user-attachments/assets/8bf342af-28e6-4bd4-b5b9-763d4080712f)
 
 <h2>2. Cart Page</h2>
