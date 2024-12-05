@@ -16,13 +16,13 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ##Screenshot
 <h2>1. Home Page</h2>
-![Screenshot 2024-11-19 153700](https://github.com/user-attachments/assets/370238d4-b8b3-4194-b7d8-6fa1d77aad5f)
-<h2>2. Cart Page</h2>
-![Screenshot 2024-11-19 153740](https://github.com/user-attachments/assets/812d4ee6-0631-44ae-a626-ebbca46a8bd7)
-<h2>3. Payment Page</h2>
-![Screenshot 2024-11-19 153807](https://github.com/user-attachments/assets/ed00b935-b084-401f-96e6-c498495eac28)
+![Screenshot 2024-12-05 122023](https://github.com/user-attachments/assets/8bf342af-28e6-4bd4-b5b9-763d4080712f)
 
-![Screenshot 2024-12-05 122023](https://github.com/user-attachments/assets/343b315c-89a5-4912-a0dd-069075871a58)
+<h2>2. Cart Page</h2>
+![Screenshot 2024-11-19 153740](https://github.com/user-attachments/assets/7b855607-8aca-46ea-9877-c575f48253e3)
+
+<h2>3. Payment Page</h2>
+![Screenshot 2024-11-19 153807](https://github.com/user-attachments/assets/7d3a4f15-2712-4fe0-84f2-4abbf8647eda)
 
 ## Running unit tests
 
