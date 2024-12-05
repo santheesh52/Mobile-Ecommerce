@@ -22,6 +22,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 <h2>3. Payment Page</h2>
 ![Screenshot 2024-11-19 153807](https://github.com/user-attachments/assets/ed00b935-b084-401f-96e6-c498495eac28)
 
+![Screenshot 2024-12-05 122023](https://github.com/user-attachments/assets/343b315c-89a5-4912-a0dd-069075871a58)
 
 ## Running unit tests
 
