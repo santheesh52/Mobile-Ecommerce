@@ -1,0 +1,70 @@
+<div *ngIf="cartItems.length > 0; else emptyCart" class="cart-container">
+  <!-- Cart Header -->
+  <div class="cart-header">
+    <h2 class="cart-title">Shopping Cart</h2>
+    <p class="conner">Price</p>
+  </div>
+
+  <!-- Cart Items List -->
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <div class="image-container">
+      <img [src]="item.imageUrl" alt="{{ item.name }}" class="product-image" style="width: 300px; height: 250px; object-fit: cover; background-color: #333;">
+    </div>
+
+    <div class="product-details">
+      <p class="product-name">{{ item.name }}</p>
+      <p class="product-description">{{ item.description }}</p>
+      <p>Colour: Green | With Exchange Bonus or No Cost EMI</p>
+      <p>Size: 12GB + 256GB</p>
+
+      <!-- Quantity Dropdown -->
+      <div class="a-button-inner">
+        <button class="a-button-text a-declarative" (click)="toggleDropdown(item)">
+          <span class="a-dropdown-label">Qty:</span>
+          <span class="a-dropdown-prompt">{{ item.selectedQuantity }}</span>
+          <span class="a-icon a-icon-dropdown" [attr.aria-expanded]="item.dropdownVisible.toString()">▼</span>
+        </button>
+        <div *ngIf="item.dropdownVisible" class="quantity-dropdown">
+          <button *ngFor="let qty of quantityOptions" (click)="selectQuantity(item, qty)">
+            {{ qty }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <button (click)="deleteItem(item)" class="delete-button">Delete</button>
+        <button (click)="saveForLater(item)" class="save-button">Save for Later</button>
+        <button (click)="viewSimilarProducts(item)" class="similar-product">Similar Product</button>
+        <button (click)="shareItem(item)" class="share-button">Share</button>
+      </div>
+    </div>
+
+    <!-- Price Container -->
+    <div class="price-container">
+      <p class="product-price"><b>{{ item?.totalPrice | currency: 'INR':'symbol' }}</b></p>
+      <span class="original-price">
+        M.R.P: 
+        <span class="a-price a-text-price">
+          <span aria-hidden="true">₹{{ item?.originalPrice }}</span>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Cart Summary and Buy Button -->
+  <div class="cart-summary-container">
+    <div class="cart-summary">
+      <h3>Subtotal :</h3>
+      <p>{{ FinaltotalPrice | currency: 'INR':'symbol' }}</p>
+    </div>
+  </div>
+  
+  <!-- Proceed to Buy Button -->
+  <button class="buy-button" (click)="proceedToBuy(cartItems)">Proceed to Buy</button>
+</div>
+
+<!-- Empty Cart Message -->
+<ng-template #emptyCart>
+  <p class="empty-cart-message">Shopping Cart is empty.</p>
+</ng-template>

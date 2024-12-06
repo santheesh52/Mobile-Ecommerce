@@ -1,0 +1,260 @@
+/* General Styles for the Cart Page */
+.cart-header {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between; /* Space items evenly, with Price aligned to the right */
+    align-items: center; /* Center items vertically */
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #ddd; /* Optional: border line for separation */
+}
+
+.cart-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.conner {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 40px;
+    color: #555;
+}
+
+.cart-container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item:hover {
+    background-color: #f9f9f9;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-name {
+    font-size: 1.4rem;
+    padding: 10px;
+    font-weight: bold;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.product-description {
+    font-size: 1rem;
+    padding: 8px;
+    color: #666;
+    margin: 0 0 5px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #777;
+    margin-top: 20px;
+}
+
+
+/* Button Styles */
+.delete-button,
+.save-button,
+.similar-product,
+.share-button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red for delete */
+}
+
+.save-button {
+    background-color: #ffc107; /* Yellow for save */
+}
+
+.similar-product {
+    background-color: #007bff; /* Blue for similar product */
+}
+
+.share-button {
+    background-color: #17a2b8; /* Teal for share */
+}
+
+/* Dropdown Styles */
+.a-button-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.a-button-text {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.a-dropdown-label {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.a-dropdown-prompt {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.a-icon-dropdown {
+    font-size: 18px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.quantity-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 4px;
+}
+
+.quantity-dropdown button {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.quantity-dropdown button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Group Alignment */
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-group button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Adjustments to ensure content alignment */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-name, .product-description {
+    margin: 0;
+}
+
+.original-price {
+    font-size: 0.9em;
+    color: gray;
+    display: inline-block;
+    transform: translateY(3px);
+    text-decoration: line-through;
+  }
+
+/* Cart Summary Styling */
+.cart-summary-container{
+    padding: 10px;
+    margin-left: 85%;
+   
+}
+.cart-summary{
+    display: flex;
+    flex-direction: row;
+}
+/* Cart Summary Styling (for individual items) */
+.cart-summary h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333; 
+    
+}
+
+.cart-summary p {
+    padding-left: 5px;
+    margin-top: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #d9534f; /* Color for the subtotal amount */
+}
+
+
+/* Proceed to Buy Button Styling */
+.buy-button {
+    display: block;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 90%;
+}
+
+.buy-button:hover {
+    background-color: #4cae4c;
+}
+

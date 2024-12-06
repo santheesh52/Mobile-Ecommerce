@@ -1,0 +1,19 @@
+<!-- Navigation Bar -->
+<div class="navbar">
+
+  <!-- Logo Section -->
+  <div class="logo">
+    <img src="assets/Name.png" alt="Brand Name" class="logo-img" />
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input  type="text" pInputText placeholder="Search for products..." [(ngModel)]="searchTerm" (input)="filterProducts()" class="search-input"/>
+    <button pButton icon="pi pi-search" class="search-button" (click)="filterProducts()"></button>
+  </div>
+
+  <!-- User Actions -->
+  <div class="user-actions">
+    <button pButton icon="pi pi-shopping-cart" label="Cart" class="cart-button p-button-text" (click)="goToCart()"></button>
+  </div>
+</div>

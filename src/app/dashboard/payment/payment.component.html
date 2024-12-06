@@ -1,0 +1,140 @@
+<div class="payment-container">
+    <p-stepper orientation="vertical">
+      <!-- Step 1: Address Selection -->
+      <p-stepperPanel header="Select Address">
+        <ng-template pTemplate="content" let-nextCallback="nextCallback">
+          <div class="form-section">
+            <form [formGroup]="addressForm">
+              <div>
+                <label for="addressLine">Address Line</label>
+                <input id="addressLine" formControlName="addressLine" placeholder="Address" class="input-field"/>
+                <p *ngIf="addressForm.get('addressLine')?.invalid && addressForm.get('addressLine')?.touched" class="error">
+                  Address is required (min 5 characters).
+                </p>
+              </div>
+              <div>
+                <label for="city">City</label>
+                <input
+                  id="city"
+                  formControlName="city"
+                  placeholder="City"
+                  class="input-field"
+                />
+                <p *ngIf="addressForm.get('city')?.invalid && addressForm.get('city')?.touched" class="error">
+                  City is required.
+                </p>
+              </div>
+              <div>
+                <label for="postalCode">Postal Code</label>
+                <input id="postalCode" formControlName="postalCode" placeholder="Postal Code" class="input-field" />
+                <p *ngIf="addressForm.get('postalCode')?.invalid && addressForm.get('postalCode')?.touched" class="error">
+                  Postal code must be 6 digits.
+                </p>
+              </div>
+              <div>
+                <label for="phone">Phone Number</label>
+                <input
+                  id="phone"
+                  formControlName="phone"
+                  placeholder="Phone Number"
+                  class="input-field"
+                />
+                <p *ngIf="addressForm.get('phone')?.invalid && addressForm.get('phone')?.touched" class="error">
+                  Phone number must be 10 digits.
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="flex py-4">
+            <p-button label="Add Address" [disabled]="addressForm.invalid" (onClick)="nextCallback.emit()"></p-button>
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+  
+      <!-- Step 2: Payment Method Selection -->
+      <p-stepperPanel header="Select Payment Method">
+        <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+          <form [formGroup]="paymentForm">
+            <!-- Credit/Debit Card Option -->
+            <div>
+              <input type="radio" id="card" formControlName="paymentMethod" value="card" />
+              <label for="card">Credit/Debit Card</label>
+              <div *ngIf="paymentForm.get('paymentMethod')?.value === 'card'">
+                <input formControlName="cardNumber" placeholder="Card Number (16 digits)" class="input-field" />
+                <input formControlName="cardName" placeholder="Name on Card" class="input-field" />
+                <input formControlName="expiryDate" placeholder="Expiry Date (MM/YY)" class="input-field" />
+                <input formControlName="cvv" placeholder="CVV (3 digits)" class="input-field" />
+              </div>
+            </div>
+      
+            <!-- UPI Option -->
+            <div>
+              <input type="radio" id="upi" formControlName="paymentMethod" value="upi" />
+              <label for="upi">UPI</label>
+              <div *ngIf="paymentForm.get('paymentMethod')?.value === 'upi'">
+                <input formControlName="upiId" placeholder="Enter UPI ID (e.g., name@bank)" class="input-field" />
+              </div>
+            </div>
+      
+            <!-- Cash on Delivery Option -->
+            <div>
+              <input type="radio" id="cod" formControlName="paymentMethod" value="cod" />
+              <label for="cod">Cash on Delivery</label>
+            </div>
+          </form>
+      
+          <!-- Navigation Buttons -->
+          <div class="flex py-4 gap-2">
+            <p-button label="Back" severity="secondary" (onClick)="prevCallback.emit()"></p-button>
+            <p-button 
+              label="Use this Payment Method" [disabled]="!paymentForm.valid"(onClick)="nextCallback.emit()">
+            </p-button>
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+      
+  
+      <!-- Step 3: Review Items -->
+      <p-stepperPanel header="Review Items and Delivery">
+        <ng-template pTemplate="content" let-prevCallback="prevCallback">
+          <div class="review-section">
+            <p>Arriving {{ selectedDeliveryOption.date }}</p>
+            <p>If you order in the next 6 hours and 5 minutes.</p>
+  
+            <div class="item-list">
+              <div *ngFor="let item of cartItems" class="item-card">
+                <div class="item-card-content">
+                  <img [src]="item.imageUrl || 'default-image-url.jpg'" alt="Item Image" class="item-image" />
+                  <div class="item-details">
+                    <p class="item-name">{{ item.name }}</p>
+                    <p class="item-price">₹{{ item.price }} (Original: ₹{{ item.originalPrice }})</p>
+                    <p class="item-quantity">Qty: {{ item.qty }}</p>
+                    <p class="item-seller">Sold by: {{ item.seller }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <h3>Choose a delivery option:</h3>
+            <div *ngFor="let option of deliveryOptions" class="delivery-option">
+              <label>
+                <input
+                  type="radio"
+                  [checked]="selectedDeliveryOption === option"
+                  (click)="selectDeliveryOption(option)"
+                />
+                {{ option.date }} - ₹{{ option.cost }}
+              </label>
+            </div>
+  
+            <h3>Order Total: ₹{{ calculateTotal() }}</h3>
+          </div>
+          <div class="flex py-4 gap-2">
+            <p-button label="Back" (onClick)="prevCallback.emit()"></p-button>
+            <p-button label="Pay" (onClick)="placeOrder()"></p-button>
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+    </p-stepper>
+  </div>
+  

@@ -1,0 +1,94 @@
+<!-- Toast notification positioned at the top-right of the page -->
+<p-toast position="top-right" key="cartToast" [baseZIndex]="10000"></p-toast>
+
+<div class="home-container">
+  <div class="content">
+    <!-- Filter Sidebar -->
+    <div class="filter-sidebar">
+      <!-- Brands Filter -->
+      <h3>Brands</h3>
+      <div *ngFor="let mobile of mobileNames" class="filter-option">
+        <input type="checkbox" [(ngModel)]="mobile.selected" (change)="filterProducts()" />
+        <label>{{ mobile.name }}</label>
+      </div>
+    
+      <!-- Customer Review Filter -->
+      <h3>Customer Review</h3>
+      <div *ngFor="let rating of ratings" class="filter-option">
+        <input type="checkbox" [(ngModel)]="rating.selected" (change)="filterProducts()" />
+        <label>{{ rating.label }}</label>
+      </div>
+    
+      <!-- Price Filter -->
+      <h3>Price</h3>
+      <div *ngFor="let price of priceRanges" class="filter-option">
+        <input type="checkbox" [(ngModel)]="price.selected" (change)="filterProducts()" />
+        <label>{{ price.label }}</label>
+      </div>
+    
+      <!-- Cellular Technology Filter -->
+      <h3>Cellular Technology</h3>
+      <div *ngFor="let technology of cellularTechnologies" class="filter-option">
+        <input type="checkbox" [(ngModel)]="technology.selected" (change)="filterProducts()" />
+        <label>{{ technology.name }}</label>
+      </div>
+    
+      <!-- Installed RAM Size Filter -->
+      <h3>Mobile Phone Installed RAM Size</h3>
+      <div *ngFor="let ram of ramSizes" class="filter-option">
+        <input type="checkbox" [(ngModel)]="ram.selected" (change)="filterProducts()" />
+        <label>{{ ram.size }} GB</label>
+      </div>
+    </div>
+    
+
+    <div class="product-list">
+      <div *ngFor="let product of filteredProducts" class="product-item">
+        <div class="product-image-container">
+          <img 
+            [src]="product.imageUrl" 
+            alt="{{product.name}}" 
+            class="product-image" 
+            style="width: 300px; height: 250px; object-fit: cover; background-color: #333;" 
+          />
+        </div>
+        <div class="product-details">
+          <p class="product-description">{{ product.description }}</p>
+          <div class="card flex justify-content-center">
+            <p-rating [(ngModel)]="product.rating" [readonly]="true" [cancel]="false" />
+        </div>
+        
+        <div class="price-section">
+          <span class="current-price">
+            <strong>{{ product.price | currency:'INR':'symbol':'1.0-0' }}</strong>
+          </span>
+          <span class="original-price">
+            M.R.P: 
+            <span class="a-price a-text-price" data-a-size="b" data-a-strike="true" data-a-color="secondary">
+              <span aria-hidden="true">₹{{ product.originalPrice }}</span>
+            </span>
+          </span>
+        </div>
+        
+
+          <div class="delivery-info">
+            <p>
+              Free Delivery by <b>{{ product.deliveryTime.standard }}</b>
+              <span *ngIf="product.deliveryTime.fastest"><br>
+                 Or fastest delivery <b>{{ product.deliveryTime.fastest }}</b>
+              </span>
+            </p>
+          </div>
+          <p>Service: Installation</p>
+           <button 
+            pButton 
+            type="button" 
+            label="Add to Cart" 
+            icon="pi pi-shopping-cart" 
+            class="p-button-sm" 
+            (click)="addToCart(product)">
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
